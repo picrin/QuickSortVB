@@ -26,9 +26,6 @@ Public Module SelectionSort
   ' stored at the j-th index. You'll need to declare a temporary variable to execute the
   ' swap, but please do it INSIDE the function, so as not to pollute the module namespace.
   Sub swap(ByVal i as Integer, ByVal j as Integer)
-    Dim t as Integer = elements(i)
-    elements(i) = elements(j)
-    elements(j) = t  
     '
     ' your code goes here
     '
@@ -39,15 +36,6 @@ Public Module SelectionSort
   ' leftmost and rightmost. It will help you to try to recall the thought process that was
   ' involved in the design of pseudocode we did yesterday.
   Function minIndex(ByVal leftmost as Integer, ByVal rightmost as Integer) as Integer
-    Dim index as Integer
-    Dim currentMinIndex as Integer
-    currentMinIndex = leftmost
-    For index = leftmost to rightmost
-      if elements(currentMinIndex) > elements(index)
-        currentMinIndex = index
-      end if
-    Next
-    return currentMinIndex
     '
     ' your code goes here
     '
@@ -58,11 +46,6 @@ Public Module SelectionSort
   ' more than one loop for a correct solution. It is OK if you don't manage to come up with the 
   ' implementation during the class, but try to think about it as part of your homework.
   Sub selectionSort()
-    Dim index as Integer
-    For index = 0 to elements.Count() - 1
-      Dim nextSmallest as Integer = minIndex(index, elements.Count() - 1)
-      swap(index, nextSmallest)
-    Next
     '
     ' your code goes here
     '
